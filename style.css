@@ -1,169 +1,173 @@
-/*
-Este projeto visa oferecer de maneira fácil e visual os horários de missa.
+    /*
+    Este projeto visa oferecer de maneira fácil e visual os horários de missa.
 
-Problemas a serem resolvidos: sistema de busca considera acentos. Por exemplo, se pesquisar por "ipe" não encontrará "Ipê" pela falta do acento no campo de busca.
+    Problemas a serem resolvidos: sistema de busca considera acentos. Por exemplo, se pesquisar por "ipe" não encontrará "Ipê" pela falta do acento no campo de busca.
 
-Este projeto é derivado de um projeto hospedado no codepen. Segue a licença do projeto original.
+    Este projeto é derivado de um projeto hospedado no codepen. Segue a licença do projeto original.
 
-----
+    ----
 
-Copyright (c) 2020 by Emerson Thompson (https://codepen.io/thompsonemerson/pen/VYaKdp)
+    Copyright (c) 2020 by Emerson Thompson (https://codepen.io/thompsonemerson/pen/VYaKdp)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-----
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    ----
 
-*/
+    */
 
-* {
-    font-family: Montserat;
-    align-items: center;
-}
-
-.all_missa {
-    margin: 0;
-    display: block;
-    justify-content: center;
-}
-
-span {
-    font-size: 0.7em;
-    margin-bottom: 0;
-
-}
-
-.descricao_missas {
-    background-color: #1e73be;
-    max-width: 100%;
-    padding: 30px;
-
-}
-
-.invert {
-    filter: invert(100%);
-    width: 30%;
-
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-}
-
-.descricao_missas p, h1 {
-    color: white;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 0;
-    
-}
-
-h1{
-    text-align: center;
-}
-
-input {
-    width: 50%;
-    align-content: center;
-    border-radius: 4px;
-    width: 100%;
-
-    padding: 12px;
-    box-sizing: border-box;
-
-    border-radius:  6px;
-    border: 1px solid white;
-    box-shadow: 0px 8px 16px #00000032;
-
-    text-align: center;
-
-}
-
-.missa {
-    border-radius:  10px;
-    border: 1px solid #1e73be;
-    margin:10px;
-    transition: 400ms;
-
-}
-
-.missa:hover {
-    border-radius:  10px;
-    border: 1px solid #1e73be;
-    color: white;
-    background-color: #1e73be;
-    margin:10px;
-    box-shadow: 0px 8px 14px #00000057;
-    transform: scale(1.04);
-}
+    * {
+        font-family: Montserat;
+        align-items: center;
+    }
 
 
-.missa p{
-    text-align: center;
-    max-width: 95%;
-    margin: 20px 30px;
-}
+    .all_missa {
+        margin: 0;
+        display: block;
+        justify-content: center;
+    }
 
-@media (min-width: 780px) {
-body{
-    overflow: hidden;
-}
+    .scroll::-webkit-scrollbar {
+    width:10px;
+    height: 10px;
+    }
+
+    .scroll::-webkit-scrollbar-track {
+    background:#333;
+    }
+
+    .scroll::-webkit-scrollbar-thumb {
+    background: #2e9dd8;
+    }
 
 
-.geral{
-    display: flex;
-    height: 100vh;
+    span {
+        font-size: 0.7em;
+        margin-bottom: 0;
 
-    max-width: 800px;
-    max-height: 300px;
+    }
 
-    border-radius:  6px;
-    border: 1px solid #1e73be;
+    .descricao_missas {
+        background-color: #1e73be;
+        max-width: 100%;
+        padding: 30px;
 
-    margin: auto;
-    position: flex;
+    }
+
+    .invert {
+        filter: invert(100%);
+        width: 30%;
+
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+    }
+
+    .descricao_missas p, h1 {
+        color: white;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 0;
+        
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    input {
+        width: 50%;
+        align-content: center;
+        border-radius: 4px;
+        width: 100%;
+
+        padding: 12px;
+        box-sizing: border-box;
+
+        border-radius:  6px;
+        border: 1px solid white;
+        box-shadow: 0px 8px 16px #00000032;
+
+        text-align: center;
+
+    }
+
+    .missa {
+        border-radius:  10px;
+        border: 1px solid #1e73be;
+        margin:10px;
+        transition: 400ms;
+        color: #606060;
+
+    }
+
+    .missa:hover {
+        border-radius:  10px;
+        border: 1px solid #1e73be;
+        color: white;
+        background-color: #1e73be;
+        margin:10px;
+        box-shadow: 0px 8px 14px #00000057;
+        transform: scale(1.04);
+    }
+
+
+    .missa p{
+        text-align: center;
+        max-width: 95%;
+        margin: 20px 30px;
+    }
 
 
 
-    overflow: none;
-}
-
-.descricao_missas {
-    width: 40%;
-    height: 100%;
+    @media (min-width: 780px) {
+    body{
+        overflow: hidden;
+    }
 
 
-    height: 100vh;
-    max-height: 300px;
+    .geral{
+        display: flex;
+        height: 100vh;
+        max-width: 800px;
+        max-height: 500px;
+        border-radius:  6px;
+        border: 1px solid #1e73be;
+        margin: auto;
+        position: flex;
+        overflow: none;
+    }
 
-    padding: 0;
-    
-    
-    
-}
+    .descricao_missas {
+        width: 40%;
+        height: 100%;
+        height: 100vh;
+        max-height: 500px;
+        padding: 0; 
+    }
 
-.descricao_missas input {
-    width: 50%;
-    align-items: center;
-    border-radius: 4px;
-    width: 90%;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
+    .descricao_missas input {
+        width: 50%;
+        align-items: center;
+        border-radius: 4px;
+        width: 90%;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
 
-}
+    }
+    .missas{
+        position: relative;
+        border:40px;
+        width: 100%;
+    }
 
-.missas{
-    position: relative;
-    border:40px;
-    width: 100%;
-}
-.rolagem {
-    max-height: 700px;
-    overflow: auto;
-
-}
-}
-
+    .rolagem {
+        max-height: 500px;
+        overflow: auto;
+    }
+    }
