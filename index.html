@@ -1,0 +1,148 @@
+<!--
+Este projeto visa oferecer de maneira fácil e visual os horários de missa.
+
+Problemas a serem resolvidos: sistema de busca considera acentos. Por exemplo, se pesquisar por "ipe" não encontrará "Ipê" pela falta do acento no campo de busca.
+
+Este projeto é derivado de um projeto hospedado no codepen. Segue a licença do projeto original.
+
+----
+
+Copyright (c) 2020 by Emerson Thompson (https://codepen.io/thompsonemerson/pen/VYaKdp)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+----
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+
+<div class="all_missa">
+    <!-- Descrião da página-->
+    <div class="geral">
+    <div class="descricao_missas">
+        <img class="invert" src="https://pixabay.com/get/54e6d54a4f4fb10af6df837cce2a2a7f1037d9e45558724f72.svg" alt="relógio">
+        <h1>Horários de transmissão das missas dominicais</h1>
+        <p>Nestes dias de isolamento social, em que não podemos celebrar em comunide, reza conosco desde sua casa.</p>
+        <p><span>Sujeito a alterações<br> Última atualização: 04 de abril de 2020</span></p>
+        <div class="filtrar_time_missas">
+            <input id="filtra_missas" type="text" placeholder="Procure por paróquia, cidade ou horário">
+        </div>    
+    </div>
+    <!-- Dados-->
+
+    <div>
+    <!-- barra-->
+
+    <!-- Dados-->
+     <div class="missas">
+         <div class="rolagem">
+        <div class="missa">
+            <p><b>Catedral Nossa Senhora da Oliveira – Vacaria/RS</b></p>
+            <p>10h15min e 18h</p>
+            <p>Pela página do Facebook da Catedral Nossa Senhora da Oliveira</p>
+            </div>
+            
+            <div class="missa">
+            <p><b>Paróquia Nossa Senhora da Glória – Vacaria/RS</b></p>
+            <p>9h e 18h</p>
+            <p>Pela página do Facebook da Paróquia Nossa Senhora da Glória de Vacaria</p>
+            </div>
+            
+            <div class="missa">
+            <p><b>Paróquia São João Batista – Sananduva/RS</b></p>
+            <p>9h</p>
+            <p>Pela página do Facebook da Paróquia São João Batista/ Sananduva-RS</p>
+            </div>
+            
+            <div class="missa">
+            <p><b>Paróquia Santo Antônio - Lagoa Vermelha/RS</b></p>
+            <p>9h</p>
+            <p>Pela página do Facebook da Tua Rádio Cacique</p>
+            </div>
+            
+            <div class="missa">
+            <p><b>Paróquia São José - São José dos Ausentes/RS</b></p>
+            <p>9h30min</p>
+            <p>Pelo perfil do Padre André Varisa</p>
+            </div>
+            
+            <div class="missa">
+            <p><b>Paróquia Nossa Senhora de Lourdes - Cacique Doble/RS</b></p>
+            <p>9h</p>
+            <p>Pela página do Facebook da Paróquia Nossa Senhora de Lourdes de Cacique Doble</p>
+            </div>
+            
+            <div class="missa">
+            <p><b>Santuário Nossa Senhora de Caravággio – Paim Filho/RS</b></p>
+            <p>9h</p>
+            <p>Pela página do Facebook Caravággio Paim Filho</p>
+            </div>
+            
+            <div class="missa">
+            <p><b>Paróquia São Luiz Rei – Ipê/RS</b></p>
+            <p>9h e 18h</p>
+            <p>Pela página do Facebook Paróquia São Luiz Rei</p>
+            </div>
+            
+            <div class="missa">
+            <p><b>Paróquia São José, Ibiraiaras/RS</b></p>
+            <p>9h</p>
+            <p>Pela página do Facebook da Rádio Nativa FM de Ibiraiaras</p>
+            </div>
+            
+            <div class="missa">
+            <p><b>Santuário Diocesano N Sra Consoladora - Ibiaçá/RS</b></p>
+            <p>9h</p>
+            <p>Pela página do Facebook da Rádio Cristalina FM</p>
+            </div>
+            
+            <div class="missa">
+            <p><b>Paróquia São Paulo Apóstolo - Lagoa Vermelha/RS</b></p>
+            <p>9h</p>
+            <p>Pela página do Facebook Paróquia São Paulo Apóstolo de Lagoa Vermelha/RS</p>
+            </div>
+     </div>
+    </div>
+        
+    </div>
+</div>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script> 
+    <script>
+        $(function(){ 
+
+            $("#filtra_missas").keyup(function(){
+             var texto = $(this).val();
+  
+        $(".missa").each(function(){
+            var encontradas = $(this).text().toUpperCase().indexOf(' '+texto.toUpperCase());
+    
+        if(encontradas < 0) {
+             $(this).fadeOut();
+        }else {
+            $(this).fadeIn();
+    }
+  }); 
+
+});
+
+});
+    </script>
+</div>
+</body>
+</html>
