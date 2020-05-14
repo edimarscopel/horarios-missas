@@ -5,6 +5,8 @@ Este projeto visa oferecer de maneira fácil e visual os horários de missa.
 
 Problemas a serem resolvidos: sistema de busca considera acentos. Por exemplo, se pesquisar por "ipe" não encontrará "Ipê" pela falta do acento no campo de busca.
 
+Visualize o projeto em https://edimarscopel.github.io/horarios-missas/
+
 Este projeto é derivado de um projeto hospedado no codepen. Segue a licença do projeto original.
 
 ----
